@@ -10,7 +10,7 @@ import collections
 class DynamicTimeWarping(object):
     
     def __init__(self,max_window=10000):
-        self.max_window = max__window
+        self.max_window = max_window
        
    
 
