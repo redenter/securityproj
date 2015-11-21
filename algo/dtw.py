@@ -1,6 +1,5 @@
 import math
 import csv
-import matplotlib.pyplot as plt
 import numpy as np
 from math import factorial
 import sys
