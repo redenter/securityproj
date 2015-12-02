@@ -22,7 +22,8 @@ def checkSync(request):
 	
 	cosine_score = cosine.similarity_score(phoneData,watchData)
 
-	d = dtw.DynamicTimeWarping()
+	# d = dtw.DynamicTimeWarping()
+	d = dtw.Dtw()
 	pX = phoneData['x'][10:]
 	pY = phoneData['y'][10:]
 	pZ = phoneData['z'][10:]
@@ -30,9 +31,12 @@ def checkSync(request):
 	wY = watchData['y'][10:]
 	wZ = watchData['z'][10:]
 
-	d1 = d.distance(pX,wX) 
-	d2 = d.distance(pY,wY) 
-	d3 = d.distance(pZ,wZ) 
+	# d1 = d.distance(pX,wX) 
+	# d2 = d.distance(pY,wY) 
+	# d3 = d.distance(pZ,wZ) 
+	d1 = d._dtw_distance(pX,wX) 
+	d2 = d._dtw_distance(pY,wY) 
+	d3 = d._dtw_distance(pZ,wZ) 
 
 	failureDict = {"status":"0"}
 	successDict = {"status":"1"}
